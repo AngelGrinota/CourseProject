@@ -176,17 +176,20 @@ namespace EducationProgram.Services
         /// </returns>
         public async Task<User?> AddUserAsync(User newUser)
         {
-            // Добавляем нового пользователя в контекст
+            newUser.Role = null;
+            newUser.Group = null;
+
             _context.Users.Add(newUser);
-            // Сохраняем изменения в базе данных и получаем сгенерированный UserId
+
             await _context.SaveChangesAsync();
-            // Дозагружаем связанные сущности (роль и группу),
-            // чтобы вернуть полностью заполненный объект
+
             await _context.Entry(newUser).Reference(u => u.Role).LoadAsync();
+
             if (newUser.GroupId.HasValue)
             {
                 await _context.Entry(newUser).Reference(u => u.Group).LoadAsync();
             }
+
             return newUser;
         }
 
@@ -259,6 +262,17 @@ namespace EducationProgram.Services
         {
             _context.TestResults.Add(result);
             await _context.SaveChangesAsync();
+        }
+
+        public async Task<bool> IsLoginTakenAsync(string login, int? excludeUserId = null)
+        {
+            if (excludeUserId.HasValue)
+            {
+                return await _context.Users
+                    .AnyAsync(u => u.Login == login && u.UserId != excludeUserId.Value);
+            }
+
+            return await _context.Users.AnyAsync(u => u.Login == login);
         }
 
         // Метод для создания теста и наполнения его вопросами из импорта

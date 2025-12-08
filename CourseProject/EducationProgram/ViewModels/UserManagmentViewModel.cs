@@ -49,17 +49,14 @@ namespace EducationProgram.ViewModels
             Roles = new ObservableCollection<Role>(allRoles);
             Groups = new ObservableCollection<UserGroup>(allGroups);
 
-            // Инициализация полей
             UserLogin = user.Login ?? string.Empty;
             UserPassword = user.Password ?? string.Empty;
             UserSurname = user.Surname ?? string.Empty;
             UserName = user.Name ?? string.Empty;
             UserPatronymic = user.Patronymic ?? string.Empty;
 
-            // Заголовок окна
             WindowTitle = isNew ? "Создание преподавателя" : "Редактирование пользователя";
 
-            // Роль
             if (isTeacherMode)
             {
                 SelectedRole = Roles.FirstOrDefault(r => r.RoleName == "Преподаватель");
@@ -109,7 +106,7 @@ namespace EducationProgram.ViewModels
             {
                 errorMessage = "Все поля должны быть заполнены.";
                 return false;
-            }
+            }    
 
             if (SelectedRole == null)
             {
@@ -168,22 +165,35 @@ namespace EducationProgram.ViewModels
                 return;
             }
 
-            UpdateTargetUser();
-
             try
             {
+                int? excludeId = _isNew ? null : _targetUser.UserId;
+
+                bool isTaken = await _userService.IsLoginTakenAsync(UserLogin.Trim(), excludeId);
+
+                if (isTaken)
+                {
+                    ShowError($"Логин '{UserLogin}' уже занят другим пользователем.");
+                    return;
+                }
+
+                UpdateTargetUser();
+
                 if (_isNew)
+                {
                     await _userService.AddUserAsync(_targetUser);
+                }
                 else
+                {
                     await _userService.UpdateUserAsync(_targetUser);
+                }
+
+                CloseRequest?.Invoke(true);
             }
             catch (Exception ex)
             {
-                ShowError($"Ошибка при сохранении пользователя: {ex.Message}");
-                return;
+                ShowError($"Критическая ошибка сохранения: {ex.Message}");
             }
-
-            CloseRequest?.Invoke(true);
         }
 
         [RelayCommand]

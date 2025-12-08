@@ -89,5 +89,10 @@ namespace EducationProgram.Services
         {
             return await _dataAccessService.DeleteUserAsync(userId);
         }
+
+        public async Task<bool> IsLoginTakenAsync(string login, int? excludeUserId = null)
+        {
+            return await _dataAccessService.IsLoginTakenAsync(login, excludeUserId);
+        }
     }
 }
