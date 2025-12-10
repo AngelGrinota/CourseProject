@@ -1,12 +1,9 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0" version="29.2.4">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0" version="29.2.6">
   <diagram name="Страница-1" id="DDIBBqpuI1vD4a3PXmv8">
     <mxGraphModel dx="950" dy="571" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="DAbzYKYlZqvRZijybvvy-9" parent="1" style="verticalAlign=top;align=left;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=10;direction=south;fontStyle=4;html=1;whiteSpace=wrap;fontSize=13;" value="" vertex="1">
-          <mxGeometry height="301" width="362" x="414" y="148" as="geometry" />
-        </mxCell>
         <mxCell id="zcqbm9S7t7mMw0GD13mi-1" parent="1" style="verticalAlign=top;align=left;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=10;direction=south;fontStyle=4;html=1;whiteSpace=wrap;fontSize=13;" value="" vertex="1">
           <mxGeometry height="236" width="339" x="43" y="210" as="geometry" />
         </mxCell>
@@ -49,8 +46,8 @@
         <mxCell id="tOgqh6l6d09caZSUYxvQ-16" parent="tOgqh6l6d09caZSUYxvQ-11" style="text;align=center;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;fontSize=13;" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;EducationProgram.exe&lt;/span&gt;" vertex="1">
           <mxGeometry height="26" width="80" x="90" y="83" as="geometry" />
         </mxCell>
-        <mxCell id="tOgqh6l6d09caZSUYxvQ-17" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=13;" value="&amp;lt;&amp;lt;virtual machine(KVM)&amp;gt;&amp;gt;" vertex="1">
-          <mxGeometry height="29" width="177" x="537" y="228" as="geometry" />
+        <mxCell id="tOgqh6l6d09caZSUYxvQ-17" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=13;" value="&amp;lt;&amp;lt;device&amp;gt;&amp;gt;" vertex="1">
+          <mxGeometry height="29" width="177" x="522.5" y="228" as="geometry" />
         </mxCell>
         <mxCell id="tOgqh6l6d09caZSUYxvQ-19" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=13;" value="&amp;lt;&amp;lt;device&amp;gt;&amp;gt;" vertex="1">
           <mxGeometry height="29" width="99" x="163" y="228" as="geometry" />
@@ -73,14 +70,8 @@
         <mxCell id="zcqbm9S7t7mMw0GD13mi-5" parent="DAbzYKYlZqvRZijybvvy-5" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=13;" value="63307/tcp" vertex="1">
           <mxGeometry height="30" width="60" x="3" y="1.5" as="geometry" />
         </mxCell>
-        <mxCell id="DAbzYKYlZqvRZijybvvy-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=13;" value="&amp;lt;&amp;lt;device&amp;gt;&amp;gt;" vertex="1">
-          <mxGeometry height="29" width="99" x="561.5" y="153" as="geometry" />
-        </mxCell>
-        <mxCell id="DAbzYKYlZqvRZijybvvy-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=13;" value="Proxmox Virtual Enviroment node" vertex="1">
-          <mxGeometry height="29" width="201.75" x="510.12" y="178" as="geometry" />
-        </mxCell>
-        <mxCell id="DAbzYKYlZqvRZijybvvy-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=13;" value="OS: Linux (Debian)" vertex="1">
-          <mxGeometry height="29" width="153.5" x="534.25" y="257" as="geometry" />
+        <mxCell id="DAbzYKYlZqvRZijybvvy-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=13;" value="Server" vertex="1">
+          <mxGeometry height="29" width="153.5" x="534.25" y="259" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
